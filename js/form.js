@@ -14,7 +14,7 @@ botaoAdiciona.addEventListener('click', function(event){
    return;
   }
 
-adicionaPacienteNaTabela(paciente);
+  adicionaPacienteNaTabela(paciente); 
 
   ul.innerHTML= '';
   
