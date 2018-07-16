@@ -6,9 +6,9 @@ botaoAdiciona.addEventListener('click', function(event){
   
   var form = document.querySelector('#adicionaPaciente');
   var tabela = document.querySelector('#tabela-pacientes');
+  var ul = document.querySelector('#mensagens-erro');
 
-  var paciente = CriaObjetoPaciente(form);
-  console.log(paciente)
+  var paciente = montaPaciente(form);
   var tr = montaTr(paciente);
   var erros = validaPaciente(paciente);
 
@@ -16,13 +16,13 @@ botaoAdiciona.addEventListener('click', function(event){
    exibeMensagemDeErro(erros);
    return;
   }
-
+  ul.innerHTML= '';
   tabela.appendChild(tr);
   form.reset();
   
 })
 
-function CriaObjetoPaciente(form){
+function montaPaciente(form){
   var paciente = {
     nome: form.nome.value,
     peso: form.peso.value,
